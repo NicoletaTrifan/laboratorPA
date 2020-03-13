@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,7 +15,7 @@ public class Hospital implements Comparable<Hospital> {
     }
 
     public List<Residents> getHospitalR() {
-        return hospitalR;
+        return this.hospitalR;
     }
 
     public String getName() {
@@ -23,9 +24,7 @@ public class Hospital implements Comparable<Hospital> {
 
     public void setHospitalR(Residents... hospitalR) {
         if (hospitalR.length <= this.capacity) {
-            for (Residents hospitalResident : hospitalR) {
-                this.hospitalR.add(hospitalResident);
-            }
+            this.hospitalR.addAll(Arrays.asList(hospitalR));
         }
     }
 

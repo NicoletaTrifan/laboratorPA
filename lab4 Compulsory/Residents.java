@@ -22,9 +22,7 @@ public class Residents {
     }
 
     public void setHospitalList(Hospital... hospitalList) {
-        for (Hospital hospital : hospitalList) {
-            this.hospitalList.add(hospital);
-        }
+        this.hospitalList.addAll(Arrays.asList(hospitalList));
         Arrays.stream(hospitalList).forEach(hospitalR -> hospitalR.addResident(this));
     }
 

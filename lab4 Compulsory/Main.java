@@ -54,12 +54,13 @@ public class Main {
         hospitalsPreferencesMap.put(hospitals[1], Arrays.asList(residents[0], residents[2], residents[1]));
         hospitalsPreferencesMap.put(hospitals[2], Arrays.asList(residents[0], residents[1], residents[3]));
         System.out.println();
-        for (Map.Entry<Residents, List<Hospital>> entry : residentsPreferencesMap.entrySet())
+        for (Map.Entry<Residents, List<Hospital>> entry : residentsPreferencesMap.entrySet()) {
             System.out.println(entry.getKey() + ":" + "(" + entry.getValue() + ")");
+        }
         System.out.println();
-        for (Map.Entry<Hospital, List<Residents>> entry : hospitalsPreferencesMap.entrySet())
+        for (Map.Entry<Hospital, List<Residents>> entry : hospitalsPreferencesMap.entrySet()) {
             System.out.println(entry.getKey() + ":" + "(" + entry.getValue() + ")");
-
+        }
         System.out.println("The residents who accept H0");
         residentList.stream()
                 .filter(res -> residentsPreferencesMap.get(res).contains(hospitals[0]))
