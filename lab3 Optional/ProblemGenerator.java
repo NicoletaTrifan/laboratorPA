@@ -15,8 +15,9 @@ public class ProblemGenerator {
         }
         if (randomItem == 2) {
             return new Book("book", randomWeight, randomValue);
-        } else
+        } else {
             return new Weapon(Weapon.WeaponType.SWORD, randomWeight, randomValue);
+        }
     }
 
     public ArrayList<Item> generateItems() {
@@ -61,6 +62,6 @@ public class ProblemGenerator {
         dynamic.solver();
         long endTimeDP = System.nanoTime();
         long dynamicExecutionTime = (endTimeDP - startTimeDP);
-        System.out.println("Timpul de executie pentru solutia greedy " + dynamicExecutionTime + " cu profitul maxim obtinut " + dynamic.getProfit());
+        System.out.println("Timpul de executie pentru solutia dynamic programming " + dynamicExecutionTime + " cu profitul maxim obtinut " + dynamic.getProfit());
     }
 }
